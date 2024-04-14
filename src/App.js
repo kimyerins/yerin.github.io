@@ -13,7 +13,7 @@ function App() {
   ]);
   let [logo, setLogo] = useState("ReactBlog");
   let [num, numChange] = useState([0, 0, 0]);
-  let [modal, setModal] = useState("hide");
+  let [modal, setModal] = useState("show");
 
   return (
     <div className="App">
@@ -29,44 +29,7 @@ function App() {
       >
         가나다순정렬
       </button>
-      {/* <div className="list">
-        <h4>
-          {title[0]}
-          <span
-            onClick={() => {
-              numChange(num + 1);
-            }}
-          >
-            👍
-          </span>
-          {num}
-          <button
-            onClick={() => {
-              let copy = [...title];
-              copy[0] = "여자 코트 추천";
-              titleChange(copy);
-            }}
-          >
-            글제목 변경
-          </button>
-        </h4>
-        <p>2월 17일 발행</p>
-      </div>
-      <div className="list">
-        <h4>{title[1]}</h4>
-        <p>2월 17일 발행</p>
-      </div>
-      <div className="list">
-        <h4
-          onClick={() => {
-            modal == "show" ? setModal("hide") : setModal("show");
-          }}
-        >
-          {title[2]}
-        </h4>
-        <p>2월 17일 발행</p>
-      </div> */}
-      {modal == "show" ? <Modal /> : null}
+
       {title.map(function (a, i) {
         return (
           <div className="list">
@@ -87,14 +50,15 @@ function App() {
           </div>
         );
       })}
+      {modal == "show" ? <Modal title={title} /> : null}
     </div>
   );
 }
 
-function Modal() {
+function Modal(props) {
   return (
     <div className="modal">
-      <h4>제목</h4>
+      <h4>{props.title[0]}</h4>
       <p>날짜</p>
       <p>상세내용</p>
     </div>

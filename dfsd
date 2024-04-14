@@ -1,0 +1,48 @@
+warning: in the working copy of 'src/App.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/App.js', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/src/App.css b/src/App.css[m
+[1mindex 74b5e05..5cef831 100644[m
+[1m--- a/src/App.css[m
+[1m+++ b/src/App.css[m
+[36m@@ -2,11 +2,28 @@[m
+   text-align: center;[m
+ }[m
+ [m
+[32m+[m[32m.black-nav {display: flex; background-color: black; width: 100%; color: #fff; padding-left: 20px;}[m
+[32m+[m[32mdiv {[m
+[32m+[m[32m  box-sizing : border-box[m
+[32m+[m[32m}[m
+[32m+[m[32m.list {[m
+[32m+[m[32m  text-align : left;[m
+[32m+[m[32m  padding-left : 20px;[m
+[32m+[m[32m  border-bottom : 1px solid grey;[m
+[32m+[m[32m}[m
+[32m+[m
+ .App-logo {[m
+   height: 40vmin;[m
+   pointer-events: none;[m
+ }[m
+ [m
+[32m+[m[32m.modal{[m
+[32m+[m[32m  margin-top : 20px;[m
+[32m+[m[32m  padding : 20px;[m
+[32m+[m[32m  background : #eee;[m
+[32m+[m[32m  text-align : left;[m
+[32m+[m[32m}[m
+[32m+[m
+ @media (prefers-reduced-motion: no-preference) {[m
+   .App-logo {[m
+     animation: App-logo-spin infinite 20s linear;[m
+[1mdiff --git a/src/App.js b/src/App.js[m
+[1mindex d02a3ba..262e4c6 100644[m
+[1m--- a/src/App.js[m
+[1m+++ b/src/App.js[m
+[36m@@ -8,7 +8,7 @@[m [mfunction App() {[m
+   let post = "강남 우동 맛집";[m
+   let [title, titleChange] = useState([[m
+     "남자 코트 추천",[m
+[31m-    "강남 우동맛집",[m
+[32m+[m[32m    "강남 우동맛집1",[m
+     "파이썬독학",[m
+   ]);[m
+   let [logo, setLogo] = useState("ReactBlog");[m
