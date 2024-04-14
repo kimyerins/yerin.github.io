@@ -14,6 +14,7 @@ function App() {
   let [logo, setLogo] = useState("ReactBlog");
   let [num, numChange] = useState([0, 0, 0]);
   let [modal, setModal] = useState("show");
+  let [tit, setTit] = useState(0);
 
   return (
     <div className="App">
@@ -33,7 +34,11 @@ function App() {
       {title.map(function (a, i) {
         return (
           <div className="list">
-            <h4>
+            <h4
+              onClick={() => {
+                setTit(i);
+              }}
+            >
               {title[i]}
               <span
                 onClick={() => {
@@ -50,17 +55,21 @@ function App() {
           </div>
         );
       })}
-      {modal == "show" ? <Modal title={title} /> : null}
+
+      {modal == "show" ? (
+        <Modal titleChange={titleChange} title={title} tit={tit} />
+      ) : null}
     </div>
   );
 }
 
 function Modal(props) {
   return (
-    <div className="modal">
-      <h4>{props.title[0]}</h4>
+    <div className="modal" style={{ background: props.color }}>
+      <h4>{props.title[props.tit]}</h4>
       <p>날짜</p>
       <p>상세내용</p>
+      <button>글수정</button>
     </div>
   );
 }
